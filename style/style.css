@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&family=Zen+Dots&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.main {
+    height: fit-content;
+    width: 97vw;
+    position: relative;
+    top: 10%;
+    left: -10px;
+    background-color: #07004D;
+    gap: 50px;
+    padding: 1vw;
+    padding-bottom: 70px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+}
+
+.header {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 3vw;
+    height: 40%;
+    margin: 20px;
+}
+
+hr {
+    width: 50%;
+    background-color: white;
+}
+
+.book {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 350px;
+    height: 450px;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.book-small {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.book p {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+}
+
+.book a {
+    cursor: pointer;
+}
+
+img {
+    height: 35vh;
+}
+
+
+
+.section {
+    height: fit-content;
+    padding: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section input {
+    margin: 10px;
+    width: 50vw;
+    height: 30px;
+}
+.wrong{
+    border: 2px solid red;
+}
+
+.section button {
+    width: 20vw;
+    height: 30px;
+    font-size: 1em;
+    color: white;
+    background-color: #07004D;
+    cursor: pointer;
+ 
+}
+
+
+
+
+.footer {
+    position: relative;
+    bottom: 0%;
+
+}
+
+.footer .inside {
+    display: flex;
+    height: 300px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.footer .left {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.footer .left button {
+    color: white;
+    background-color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: fit-content;
+    font-size: 20px;
+}
+
+.footer .left input {
+
+    width: 60%;
+    height: 10%;
+}
+
+.footer hr {
+    border-top: #000 solid 4px;
+    width: 100%;
+}
+
+.footer h1 {
+    font-size: 50px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+}
+
+.footer .right {
+    margin-top: 70px;
+    margin-right: 150px;
+}
+
+.footer .right h3 {
+
+    margin-bottom: 30px;
+}
+
+.footer ul {
+
+    list-style: none;
+}
+
+.footer ul li {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 10px;
+    position: relative;
+    top: -10px;
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Master and Margarita",
+        "link": "https://d3525k1ryd2155.cloudfront.net/h/335/893/1024893335.0.x.jpg",
+        "price": 9.99,
+        "year": "1990"
+    },
+    {
+        "name": "Kissland",
+        "link": "https://i.pinimg.com/736x/6a/85/0b/6a850bc01f8214542232154816d4fde6--cover-books-kafka-on-the-shore.jpg",
+        "price": 9.99,
+        "year": "1990"
+    },
+    {
+        "name": "Divine Comedy",
+        "link": "https://images.penguinrandomhouse.com/cover/9780679433132",
+        "price": 9.99,
+        "year": "1990"
+    },
+    {
+        "name": "Starboy",
+        "link": "https://i.pinimg.com/736x/6a/85/0b/6a850bc01f8214542232154816d4fde6--cover-books-kafka-on-the-shore.jpg",
+        "price": 9.99,
+        "year": "1990"
+    },
+    {
+        "name": "My Dear Melancholy",
+        "link": "https://i.pinimg.com/736x/6a/85/0b/6a850bc01f8214542232154816d4fde6--cover-books-kafka-on-the-shore.jpg",
+        "price": 9.99,
+        "year": "1990"
+    },
+    {
+        "name": "After Hours",
+        "link": "https://i.pinimg.com/736x/6a/85/0b/6a850bc01f8214542232154816d4fde6--cover-books-kafka-on-the-shore.jpg",
+        "price": 9.99,
+        "year": "1990"
+    },
+    {
+        "name": "Dawn FM",
+        "link": "https://i.pinimg.com/736x/6a/85/0b/6a850bc01f8214542232154816d4fde6--cover-books-kafka-on-the-shore.jpg",
+        "price": 9.99,
+        "year": "1990"
+    }
+]

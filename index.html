@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Illusive<br />Book<br />Shop</h1>
+        </div>
+        <hr>
+        <div class="container">
+        </div>
+        <a href="blog.html" style="color:white;">Explore More</a>
+
+    </div>
+    <div class="section">
+        <h1 style="text-transform: uppercase;">Want to sell your book?</h1>
+        <h4 style="margin:0px">Add now</h4>
+        <hr style="border: 1px solid black; background-color: black; width: 30%; margin: 10px;">
+        <form action="" method="post" id="myForm">
+            <label for="name">Name:</label>
+            <input class="addBook" id="name" type="text">
+            <label for="price">Price:</label>
+            <input class="addBook" id="price" type="number" min="0.1">
+            <label for="pic">Cover:</label>
+            <input class="addBook" id="pic" type="url">
+            <p style="font-size: 10px;">note: works only on pictures' links</p>
+            <label for="year">Published in:</label>
+            <input class="addBook" id="year" type="number" max="2022">
+
+        </form>
+        <button onclick="submitForm()">Submit</button>
+    </div>
+    <div class="footer">
+        <hr>
+        <div class="inside">
+            <div class="left">
+                <h1>Get all The <br> new Information</h1>
+                <input type="email" placeholder="email">
+                <button id="subs" style="cursor: pointer;">subscribe</button>
+            </div>
+
+        </div>
+        <center>
+            <p>@nnimmoo</p>
+        </center>
+    </div>
+
+    <script src="./script/navbar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("./additional/data.json", function (data) {
+                $.each(data, function (key, value) {
+                    if ($(".container").children().length < 3) {
+                        $(".container").append($('<div/>', { class: "book" }).append([$("<p>").prepend(value.name),
+                        $('<div/>', { class: "book-small" })
+                            .append([$('<img/>', {
+                                class: "image",
+                                src: value.link,
+                                alt: value.name
+                            }),
+                            $("<a>").prepend("learn more")])]));
+
+                    }
+                });
+            });
+
+            let x = ($(window).width() - $(".container").width());
+            $(".container").css(
+                {
+                    "position": "relative",
+                    "width": "fit-content",
+                    "margin": "0px",
+                    "display": "flex",
+                    "align-items": "center",
+                    "flex-direction": "row",
+                    "flex-wrap": "wrap",
+                    "gap": "10px",
+                    "align-content": "space-around",
+
+                }
+            );
+            $("label").css("font-weight", "bold");
+            $("#name").attr("placeholder", "EX: \"The Raven\"");
+            $("#price").attr("placeholder", "EX: 99.9");
+            $("#pic").attr("placeholder", "EX: https://www.yoursite.ge/");
+            $("#year").attr("placeholder", "EX: 1990");
+        }
+        );
+
+        function submitForm() {
+            try {
+                $(".addBook").each(function () {
+                    if ($(this).val() == "") {
+                        $(this).toggleClass("wrong");
+                        throw "Empty Value";
+                    }
+                });
+                var formData = {
+                    name: $("#name").val(),
+                    link: $("#pic").val(),
+                    price: $("#price").val(),
+                    year: $("#year").val()
+                }
+
+                var existing = JSON.parse(localStorage.getItem('temp'));
+                existing = existing ? existing : [];
+                existing.push(formData);
+                localStorage.setItem('temp', JSON.stringify(existing));
+                alert("Uploaded Successfully");
+            }
+            catch (err) {
+                alert(err);
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

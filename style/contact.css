@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.about-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+}
+
+.about-text {
+    background-color: transparent;
+}
+
+.about-para {
+    background-color: transparent;
+
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.about-header {
+    text-align: center;
+
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./style/blog.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>COLLECTION</h1>
+    </div>
+
+    <div class="container">
+    </div>
+    <script src="./script/navbar.js"></script>
+    <script>
+        function close() {
+            $(".popup").remove();
+        }
+        function displayInfo(event) {
+            if ($('.popup').length) {
+                $(".popup h2").text(event.data.name);
+                $(".popup img").attr("src", event.data.imageSrc);
+                $(".popup h4").text('Published: ' + event.data.date);
+
+            } else {
+
+                $("body").append($('<div/>', { class: "popup" }).append(($('<div/>', { class: "popup-content" }).append([
+                    $("<h2>").append(event.data.name),
+                    $("<img/>", { src: event.data.imageSrc, alt: event.data.name }),
+                    $("<h4>").text('Published: ' + event.data.date),
+                    $("<button/>").text("close").css("font-size", "10px").click(close)]))));
+
+            }
+        }
+
+        $(document).ready(function () {
+            $.getJSON("./additional/data.json", function (data) {
+                $.each(data, function (key, value) {
+                    $(".container").append($('<div/>', { class: "blog" })
+                        .append([$('<div/>', { class: "blog-image" }).append(
+                            $('<img/>', {
+                                class: "image",
+                                src: value.link,
+                                alt: value.name
+                            }).click(
+                                { name: value.name, imageSrc: value.link, date: value.year }, displayInfo)),
+                        $("<p>").prepend(value.name).css({ "font-weight": "bold", "text-transform": "uppercase" }),
+                        $("<p>").prepend(value.price + "$")
+                        ]));
+
+                });
+            });
+
+        });
+
+        $(".header").css("left", (($(window).width() - $(".header").width()) / 2) + "px")
+        $(window).resize(function () {
+            let x = ($(window).width() - $(".header").width()) / 2
+            $(".header").css("left", x + "px")
+        });
+        var blog = JSON.parse(localStorage.getItem('temp'));
+        console.log(blog)
+        if (blog.length != 0) {
+            blog.forEach(element => $(".container").append($('<div/>', { class: "blog" })
+                .append([$('<div/>', { class: "blog-image" }).append(
+                    $('<img/>', {
+                        class: "image",
+                        src: element.link,
+                        alt: element.name
+                    }).click(
+                        { name: element.name, imageSrc: element.link, date: element.year }, displayInfo)),
+                $("<p>").prepend(element.name).css({ "font-weight": "bold", "text-transform": "uppercase" }),
+                $("<p>").prepend(element.price + "$")
+                ])))
+        }
+    </script>
+</body>
+
+</html>
